@@ -19,15 +19,14 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "(cd ./example && vite)",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:copy-styles && npm run build:example",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:copy-styles",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir ./dist/cjs",
-    "build:copy-styles": "cp -r ./src/style ./dist/esm; cp -r ./src/style ./dist/cjs",
-    "build:example": "(cd ./example && tsc && vite build)",
+    "build:copy-styles": "cpx \"src/style/**/*\" dist/esm && cpx \"src/style/**/*\" dist/cjs",
     "test": "tsc && npm run format:check && BROWSER=none jest --maxWorkers=1 -c jest.config.js",
     "format": "prettier --write './**/*.{js,ts,tsx}'",
     "format:check": "prettier --check './**/*.{js,ts,tsx}'",
-    "clean": "rm -rf dist"
+    "clean": "rmdir /s /q dist || echo 'dist folder does not exist'"
   },
   "peerDependencies": {
     "react": ">=16.4.0",
