@@ -19,14 +19,14 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "(cd ./example && vite)",
-    "build": "npm run clean && tsc && mkdir dist && mkdir dist\\esm && mkdir dist\\esm\\components && xcopy /E /I src\\components dist\\esm\\components",
+    "build": "npm run clean && tsc && mkdir -p dist/esm/components && cp -r src/components/* dist/esm/components/",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir ./dist/cjs",
     "build:copy-styles": "cpx \"src/style/**/*\" dist/esm && cpx \"src/style/**/*\" dist/cjs",
     "test": "tsc && npm run format:check && BROWSER=none jest --maxWorkers=1 -c jest.config.js",
     "format": "prettier --write './**/*.{js,ts,tsx}'",
     "format:check": "prettier --check './**/*.{js,ts,tsx}'",
-    "clean": "if exist dist (rmdir /s /q dist)"
+    "clean": "rm -rf dist || echo 'dist folder does not exist'"
   },
   "peerDependencies": {
     "react": ">=16.4.0",
