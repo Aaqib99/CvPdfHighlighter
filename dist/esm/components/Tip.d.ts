@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "../style/Tip.css";
 interface State {
     compact: boolean;
@@ -21,6 +21,6 @@ interface Props {
 export declare class Tip extends Component<Props, State> {
     state: State;
     componentDidUpdate(nextProps: Props, nextState: State): void;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export default Tip;

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "../style/Highlight.css";
 import type { LTWHP } from "../types.js";
 interface Props {
@@ -18,6 +18,6 @@ interface Props {
     isScrolledTo: boolean;
 }
 export declare class Highlight extends Component<Props> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export default Highlight;

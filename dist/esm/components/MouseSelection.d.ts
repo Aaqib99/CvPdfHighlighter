@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "../style/MouseSelection.css";
 import type { LTWH } from "../types.js";
 interface Coords {
@@ -25,6 +25,6 @@ declare class MouseSelection extends Component<Props, State> {
     componentDidUpdate(): void;
     componentDidMount(): void;
     shouldRender(boundingRect: LTWH): boolean;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export default MouseSelection;

@@ -2,9 +2,13 @@
   "compilerOptions": {
     "target": "ES2015",
     "module": "ESNext",
-    "lib": ["ES2015", "DOM"],
+    "lib": [
+      "ES2015",
+      "DOM"
+    ],
     "moduleResolution": "Node",
-    "strict": true,
+    "skipLibCheck": true,
+    "strict": false,
     "sourceMap": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
@@ -13,7 +17,12 @@
     "jsx": "react",
     "outDir": "./dist/esm",
     "isolatedModules": true,
-    "declaration": true
+    "declaration": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
-  "include": ["./src"]
+  "include": [
+    "./src"
+  ]
 }

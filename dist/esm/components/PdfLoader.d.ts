@@ -26,7 +26,7 @@ export declare class PdfLoader extends Component<Props, State> {
     componentDidUpdate({ url }: Props): void;
     componentDidCatch(error: Error, info?: any): void;
     load(): void;
-    render(): JSX.Element;
-    renderError(): React.FunctionComponentElement<any> | null;
+    render(): React.JSX.Element;
+    renderError(): React.FunctionComponentElement<any>;
 }
 export default PdfLoader;

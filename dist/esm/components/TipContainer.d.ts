@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import type { LTWHP } from "../types";
 interface State {
     height: number;
@@ -20,6 +20,6 @@ declare class TipContainer extends Component<Props, State> {
     componentDidUpdate(nextProps: Props): void;
     componentDidMount(): void;
     updatePosition: () => void;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export default TipContainer;

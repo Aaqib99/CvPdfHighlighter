@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 interface Props {
     onMoveAway: () => void;
     paddingX: number;
@@ -10,6 +10,6 @@ declare class MouseMonitor extends Component<Props> {
     unsubscribe: () => void;
     onMouseMove: (event: MouseEvent) => void;
     attachRef: (ref: HTMLDivElement | null) => void;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export default MouseMonitor;

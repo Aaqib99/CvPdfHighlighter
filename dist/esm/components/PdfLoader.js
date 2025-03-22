@@ -42,7 +42,7 @@ export class PdfLoader extends Component {
             .then(() => discardedDocument && discardedDocument.destroy())
             .then(() => {
             if (!url) {
-                return;
+                return null;
             }
             return getDocument(Object.assign(Object.assign({}, this.props), { ownerDocument,
                 cMapUrl,

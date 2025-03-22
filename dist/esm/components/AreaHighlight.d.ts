@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "../style/AreaHighlight.css";
 import type { LTWHP, ViewportHighlight } from "../types";
 interface Props {
@@ -7,6 +7,6 @@ interface Props {
     isScrolledTo: boolean;
 }
 export declare class AreaHighlight extends Component<Props> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export default AreaHighlight;

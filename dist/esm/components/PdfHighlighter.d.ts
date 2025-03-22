@@ -1,11 +1,11 @@
-import { PointerEventHandler, PureComponent } from "react";
+import React, { PointerEventHandler, PureComponent } from "react";
 import { EventBus, PDFViewer, PDFLinkService } from "pdfjs-dist/legacy/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
 import "../style/pdf_viewer.css";
 import "../style/PdfHighlighter.css";
 import type { Position, ScaledPosition, IHighlight, Scaled, LTWH, LTWHP } from "../types";
 import type { PDFDocumentProxy } from "pdfjs-dist";
-declare type T_ViewportHighlight<T_HT> = {
+type T_ViewportHighlight<T_HT> = {
     position: Position;
 } & T_HT;
 interface State<T_HT> {
@@ -57,7 +57,7 @@ export declare class PdfHighlighter<T_HT extends IHighlight> extends PureCompone
     componentDidUpdate(prevProps: Props<T_HT>): void;
     init(): void;
     componentWillUnmount(): void;
-    findOrCreateHighlightLayer(page: number): Element | null;
+    findOrCreateHighlightLayer(page: number): Element;
     groupHighlightsByPage(highlights: Array<T_HT>): {
         [pageNumber: string]: Array<T_HT>;
     };
@@ -68,7 +68,7 @@ export declare class PdfHighlighter<T_HT extends IHighlight> extends PureCompone
     renderHighlights(nextProps?: Props<T_HT>): void;
     hideTipAndSelection: () => void;
     setTip(position: Position, inner: JSX.Element | null): void;
-    renderTip: () => JSX.Element | null;
+    renderTip: () => React.JSX.Element;
     onTextLayerRendered: () => void;
     scrollTo: (highlight: T_HT) => void;
     onDocumentReady: () => void;
@@ -81,6 +81,6 @@ export declare class PdfHighlighter<T_HT extends IHighlight> extends PureCompone
     toggleTextSelection(flag: boolean): void;
     handleScaleValue: () => void;
     debouncedScaleValue: () => void;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export {};
